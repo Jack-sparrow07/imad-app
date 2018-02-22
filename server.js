@@ -17,11 +17,11 @@ app.get('/article-one', function (req, res) {
 });
 
 app.get('/article-two', function (req, res) {
-    res.send("article two is serving");
+  res.sendFile(path.join(__dirname, 'ui', 'file2.html'));
 });
 
 app.get('/article-three', function (req, res) {
-    res.send("article three is serving");
+ res.sendFile(path.join(__dirname, 'ui', 'file3.html'));
 });
 
 app.get('/ui/madi.png', function (req, res) {
