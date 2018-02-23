@@ -20,10 +20,10 @@ var articleone = {
 };
 
 function createtemplate (data) {
-    var title=data.title;
-    var heading=data.heading;
-    var date=data.date;
-    var content=data.content;
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var content = data.content;
     var htmltemplates =
         `<html>
             <head>
@@ -54,10 +54,8 @@ function createtemplate (data) {
         </html>
 
   `;
-  return htmltemplate;
+  return htmltemplates;
 }
-
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -66,7 +64,7 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 app.get('/article-one', function (req, res) {
-res.send(createtemplate(articleone));
+res.send( createtemplate(articleone));
 });
 app.get('/article-two', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'file2.html'));
