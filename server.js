@@ -6,19 +6,19 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles={
- articleone:{
+ 'article-one':{
  title: 'article one:Sabarinath',
  heading: 'Article One',
  date:'23-2-18',
  content:`this is my first article`,
 },
-articletwo:{
+'article-two':{
              title: 'article two:Sabarinath',
              heading: 'Article two',
              date:'23-2-18',
              content:`this is article two`
             },
-articlethree:{
+'article-three':{
     title: 'article three:Sabarinath',
  heading: 'Article three',
  date:'23-2-18',
@@ -70,15 +70,9 @@ app.get('/', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-app.get('/article-one', function (req, res) {
-res.send(createtemplate(articleone));
-});
-app.get('/article-two', function (req, res) {
-  res.send(createtemplate(articletwo));
-});
-
-app.get('/article-three', function (req, res) {
-res.send(createtemplate(articlethree));
+app.get('/articlename', function (req, res) {
+    var articlename=req.params.articlename;
+res.send(createtemplate(articles[articlename]));
 });
 
 app.get('/ui/madi.png', function (req, res) {
