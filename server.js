@@ -10,19 +10,27 @@ var articles={
  title: 'article one:Sabarinath',
  heading: 'Article One',
  date:'23 feb 2018',
- content:`this is my first article`,
-},
+ content:
+`<p>
+ this is my first article
+ </p>`
+     
+ },
  'article-two':{
              title: 'article two:Sabarinath',
              heading: 'Article two',
              date:'23-2-18',
-             content:`this is article two`
+             content:`<p>
+ this is my second article
+ </p>`
             },
  'article-three':{
     title: 'article three:Sabarinath',
  heading: 'Article three',
  date:'23-2-18',
- content:`this is my third article`
+ content:`<p>
+ this is my third article
+ </p>`
 }
 };
 
@@ -69,8 +77,8 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 app.get('/articlename', function (req, res) {
-    var articlename=req.param.articlename;
-res.send(createtemplate(articles(articlename)));
+    var articlename=req.params.articlename;
+res.send(createtemplate(articles[articlename]));
 });
 
 app.get('/ui/madi.png', function (req, res) {
