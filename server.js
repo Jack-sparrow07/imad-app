@@ -5,18 +5,25 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone = {
+var articles = {
+ articleone:{
  title: 'article one:Sabarinath',
  heading: 'Article One',
  date:'23-2-18',
- content:`this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.
-                </p>
-                <p>
-                    this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.
-                </p>
-                <p>
-                    this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.this is my first attempt.
-                </p>`
+ content:`this is my first article`
+},
+articletwo:{
+             title: 'article two:Sabarinath',
+             heading: 'Article two',
+             date:'23-2-18',
+             content:`this is article two`
+            },
+articlethree:{
+    title: 'article three:Sabarinath',
+ heading: 'Article three',
+ date:'23-2-18',
+ content:`this is my third article`
+}
 };
 
 function createtemplate (data) {
@@ -67,11 +74,11 @@ app.get('/article-one', function (req, res) {
 res.send( createtemplate(articleone));
 });
 app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'file2.html'));
+  res.send( createtemplate(articletwo));
 });
 
 app.get('/article-three', function (req, res) {
- res.sendFile(path.join(__dirname, 'ui', 'file3.html'));
+res.send( createtemplate(articlethree));
 });
 
 app.get('/ui/madi.png', function (req, res) {
