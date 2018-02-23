@@ -58,11 +58,9 @@ function createtemplate(data){
                     </div>
                     </div>
                 </body>
-        </html>
-
-  `;
+        </html>`;
   return htmltemplates;
-};
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -72,7 +70,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 app.get('/articlename', function (req, res) {
     var articlename=req.param.articlename;
-res.send(createtemplate(articles[articlename]));
+res.send(createtemplate(articles(articlename)));
 });
 
 app.get('/ui/madi.png', function (req, res) {
