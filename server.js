@@ -12,13 +12,13 @@ var articles={
  date:'23 feb 2018',
  content:`this is my first article`,
 },
-'article-two':{
+ 'article-two':{
              title: 'article two:Sabarinath',
              heading: 'Article two',
              date:'23-2-18',
              content:`this is article two`
             },
-'article-three':{
+ 'article-three':{
     title: 'article three:Sabarinath',
  heading: 'Article three',
  date:'23-2-18',
@@ -62,7 +62,7 @@ function createtemplate(data){
 
   `;
   return htmltemplates;
-}
+};
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
