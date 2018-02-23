@@ -9,7 +9,7 @@ var articles={
  'article-one':{
  title: 'article one:Sabarinath',
  heading: 'Article One',
- date:'23-2-18',
+ date:'23 feb 2018',
  content:`this is my first article`,
 },
 'article-two':{
@@ -26,12 +26,12 @@ var articles={
 }
 };
 
-function createtemplate (data) {
+function createtemplate(data) {
     var title = data.title;
     var heading = data.heading;
     var date = data.date;
     var content = data.content;
-    var htmltemplates =
+    var htmltemplates=
         `<html>
             <head>
             <title>
