@@ -21,7 +21,7 @@ body {
 }
 .container{
              max-width: 800px;
-             margin:20 auto;
+             margin:0 auto;
              color:#942aa7;
-             font-family: sans-sarif;
+             font-family: sans-serif;
           }
